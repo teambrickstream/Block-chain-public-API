@@ -1,6 +1,8 @@
 # Block-chain-public-API
 BrickStream Project - blockchain API
 
+[Blockchain Explorer](search.glueapp.net)
+
 
 현재 지원 코인
 ---
@@ -18,7 +20,5 @@ BrickStream Project - blockchain API
   <li>Address</li>
   <li>Txhash</li>
 </ul>
-
-[테스트 Explorer View](search.glueapp.net)
 
 제공자 : BRICKSTREAM
