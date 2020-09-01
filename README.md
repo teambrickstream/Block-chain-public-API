@@ -1,6 +1,6 @@
 # Block-chain-public-API
 
-[Blockchain Explorer](search.glueapp.net)
+[Blockchain Explorer](http://search.glueapp.net)
 
 
 현재 지원 코인
