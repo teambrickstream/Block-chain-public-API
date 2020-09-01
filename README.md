@@ -1,5 +1,4 @@
 # Block-chain-public-API
-BrickStream Project - blockchain API
 
 [Blockchain Explorer](search.glueapp.net)
 
