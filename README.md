@@ -1,10 +1,161 @@
 # Blockchain API Explanation Document
 Ver 1.11
-
-<img src="http://search.glueapp.net/img/Brick_Logo.png" />
-
-
+<img src="http://glueapp.net/img/brick_gogo.png" />
 [Blockchain Explorer](http://search.glueapp.net)
+
+
+## 1. API 서버 기본 개요
+<ul>
+  <li>
+    ■ 블록체인 API 서버 (이하 API 서버) 기본 정보
+    
+    API Server Address :
+    http://api.glueapp.net/
+  </li>
+  
+  <li>
+    ■ API 서버 지원 코인 종류
+  
+  |Symbol|Decimal|
+  |------|---|
+  |ETH|Decimal 18|
+  |BTC|Decimal 8|
+  |EOS|Decimal 18|
+  |Klay|Decimal 18|
+  |Tron|Decimal 18|
+  </li>
+</ul>
+
+## 2. 블록체인 API 구성
+### 2.1 블록체인 별 블록 생성 조회
+<ul>
+  <li>
+    ■ REQUEST State :<br />
+      &nbsp;http://URL/dashboard/[ctype]<br /><br />
+    ■ Form :
+
+      ETHEREUM
+      {
+          Request :
+          http://URL/dashboard/eth
+
+          Response :    
+      }
+
+      KLAYTN
+      {
+          Request :
+          http://URL/dashboard/klaytn
+      }
+
+      BTC
+      {
+          Request :
+          http://URL/dashboard/btc
+      }
+
+      EOS
+      {  
+          Request :
+          http://URL/dashboard/eos
+      }
+  </li>
+</ul>
+
+### 2.2 블록체인 정보 조회
+<ul>
+  <li>
+    ■ 주소, TX Hash 값으로 해당 블록체인 메인넷의 정보 조회<br />
+  </li><br />
+  
+  <li>
+    ■ REQUEST Common Information<br />
+    &nbsp;: http://URL/information/any=[address|account|hash]
+  </li><br />
+  
+  <li>
+    ■ 이더리움, 클레이튼, 비트코인, 이오스 주소로 정보 조회<br />
+    &nbsp;: http://URL/information?any=계정주소
+  </li><br />
+  
+  <li>
+    ■ 이더리움, 클레이튼, 비트코인, 이오스 Tx Hash로 정보 조회<br />
+    &nbsp;: http://URL/information?any=hash
+  </li><br />
+  
+  <li>
+    ■ 검색 정보 옵션<br />
+    &nbsp;: ex) http://URL/information?any=[계정주소][&ctype=eos&][&eos_limit=20][&eos_cursor=]
+
+  |Parameter|설명|
+  |------|---|
+  |ctype=[symbol]|입력한 계정주소가 symbol에 해당하는 주소임을 정의|
+  |[symbol]_limit=[number]|Symbol의 action 정보를 number 개수만큼 조회|
+  |[symbol]_cursor=|Action의 cursor 값으로 Action을 검색|
+  </li><br />
+  
+  <li>
+    ■ Form
+  
+    ETHEREUM
+    {
+        Request Address :
+        http://URL/information?any=0x95216B0CC9110B22824Deaa968b215B4C3DD09f8
+        http://URL/information?any=0x95216B0CC9110B22824Deaa968b215B4C3DD09f8[&ctype=eth]
+        http://URL/information?any=0x95216B0CC9110B22824Deaa968b215B4C3DD09f8[&ctype=eth][&startblock=0][&endblock=9999999]
+
+        Request Hash :
+        http://URL/information?any=0x2304c59c30c3e83c811e143b54c074cd202c0e3d3f07debeac9c5ff2662dbc3e[&ctype=eth]
+    }
+
+    KLAYTN
+    {
+        Request Address :
+        http://URL/information?any=0x386ca3cb8bb13f48d1a6adc1fb8df09e7bb7f9c8[&ctype=klaytn][&page=1][&size=20]
+
+        Request Hash :
+        http://URL/information?any=0x1d59fed3bb8ab799faa68cf93dccd1e5ea64c0bb7d2e2eb0791ab538f94cfa8d[&ctype=klaytn]
+    }
+
+    BTC
+    {
+        Request Address :
+        http://URL/information?any=35hK24tcLEWcgNA4JxpvbkNkoAcDGqQPsP[&ctype=btc][&btc_offset=0][&btc_limit=20]
+
+        Request Hash :
+        http://URL/information?any=0x1d59fed3bb8ab799faa68cf93dccd1e5ea64c0bb7d2e2eb0791ab538f94cfa8d[&ctype=btc]
+    }
+
+    EOS
+    {   
+        Request Account :
+        http://URL/information?any=glueaccount1[&ctype=eos][&eos_limit=20][&eos_cursor=]
+
+        Request Hash :
+        http://URL/information?any=752bb4b068fc8bff74ffa5c471b0bba3624804c7bfca31b797332779c038d178[&ctype=eos]
+    }
+
+  </li><br />
+</ul>
+
+
+## 2.3 블록체인 별 주소로 정보 조회
+<ul>
+  <li>
+    ■ REQUEST Balance<br />
+      : http://URL/balance/[address| account]
+  </li><br />
+  
+  <li>
+    ■ Result Parameter<br />
+      
+  |Parameter|설명|
+  |------|---|
+  |Allow|주소 조회 결과 성공/실패|
+  |[symbol]|주소의 블록체인 메인넷 표시<br />해당 주소의 밸런스 표시|
+  </li><br />
+</ul>
+
 
 
 현재 지원 코인
