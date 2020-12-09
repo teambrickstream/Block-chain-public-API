@@ -1,6 +1,7 @@
 # Blockchain API Explanation Document
+[Blockchain Explorer](http://search.glueapp.net)<br />
 Ver 1.11<br />
-[Blockchain Explorer](http://search.glueapp.net)
+
 
 
 ## 1. API 서버 기본 개요
