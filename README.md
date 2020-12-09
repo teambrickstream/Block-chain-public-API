@@ -1,6 +1,5 @@
 # Blockchain API Explanation Document
-Ver 1.11
-<img src="http://glueapp.net/img/brick_gogo.png" />
+Ver 1.11<br />
 [Blockchain Explorer](http://search.glueapp.net)
 
 
