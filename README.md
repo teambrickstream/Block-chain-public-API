@@ -1,7 +1,7 @@
 # Blockchain API Explanation Document
 Ver 1.11
 
-<img width="16" src="http://search.glueapp.net/Brick_Logo.png" />
+<img src="http://search.glueapp.net/img/Brick_Logo.png" />
 
 
 [Blockchain Explorer](http://search.glueapp.net)
